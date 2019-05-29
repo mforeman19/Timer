@@ -1,4 +1,5 @@
 import React from 'react';
+import ProfileDisplay from './ProfileDisplay';
 
 export default class Profile extends React.Component {
 
@@ -7,8 +8,9 @@ export default class Profile extends React.Component {
         return (
         
         <div>
-             <header>Profile Page!</header>
-              
+            <header>Profile Page!</header>
+            <h1>Completed Tasks</h1>
+            <ProfileDisplay/>
         </div>
            
         );
