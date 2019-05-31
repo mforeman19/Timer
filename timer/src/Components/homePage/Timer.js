@@ -187,6 +187,7 @@ export default class Timer extends React.Component {
             shortBreakTimer : false,
             longBreakTimer : false,
             workTimer : true,
+            picture : ""
         });
     }
 
