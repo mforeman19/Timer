@@ -136,6 +136,12 @@ export default class Timer extends React.Component {
     fiveMinTimer = (e) => {
         e.preventDefault();
         clearInterval(this.state.timer);
+        axios.get('http://localhost:9000/picture').then(res => {
+           
+            console.log(res.data.file)
+            this.setState({picture : res.data.file})
+           
+            });
         this.setState({ // resets to the default state
             timeStarted: false,
             timeStopped: true,
@@ -155,6 +161,12 @@ export default class Timer extends React.Component {
     tenMinTimer = (e) => {
         e.preventDefault();
         clearInterval(this.state.timer);
+        axios.get('http://localhost:9000/picture').then(res => {
+           
+            console.log(res.data.file)
+            this.setState({picture : res.data.file})
+           
+            });
         this.setState({ // resets to the default state
             timeStarted: false,
             timeStopped: true,
