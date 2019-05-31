@@ -2,8 +2,10 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import fire from './fire';
 import Button from '@material-ui/core/Button';
-import firebase from './../homePage/Timer.css';
 import Input from '@material-ui/core/Input';
+import FormControl from '@material-ui/core/FormControl';
+import TextField from '@material-ui/core/TextField';
+import FormGroup from '@material-ui/core/FormGroup';
 import './index.css'
 
 
@@ -23,6 +25,7 @@ class Login extends Component{
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((user)=>{
         }).catch((error) => {console.log(error);})
         //pass email and password user enters in form
+        console.log("user put in email and password");
     }
    /* handleChange(e){
         this.setState({
@@ -41,7 +44,7 @@ class Login extends Component{
     render(){
         return(
             <div class="login">
-                <form>
+                <form onSubmit={this.login}>
                     <Input value={this.state.email} onChange={e => this.setState({email: e.target.value})} type="email" name="email" placeholder="enter email"/> <br/>
                     <Input value={this.state.password} onChange={e => this.setState({password: e.target.value})} type="password" name="password" placeholder="enter password"/> <br/>
                     <div class="loginbutton">
@@ -49,7 +52,6 @@ class Login extends Component{
                         <Button onClick={this.signup}> Sign up </Button>
                     </div>
                 </form>
-             
             </div>
         )
     }

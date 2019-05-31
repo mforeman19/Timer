@@ -192,29 +192,27 @@ export default class Timer extends React.Component {
 
     render() {
         return (
-          <div className="timer">
-            <div className="timerTypes">
-                <Button variant="outlined" onClick={this.workTimer}>Work</Button>
-                <Button variant="outlined" onClick={this.fiveMinTimer}>Short Break</Button>
-                <Button variant="outlined" onClick={this.tenMinTimer}>Long Break</Button>
-            </div>
+        <div className="timerAndCat">
+            <CatDisplay picture = {this.state.picture}/>
+            <div className="timer">
+                <div className="timerTypes">
+                    <Button variant="outlined" onClick={this.workTimer}>Work</Button>
+                    <Button variant="outlined" onClick={this.fiveMinTimer}>Short Break</Button>
+                    <Button variant="outlined" onClick={this.tenMinTimer}>Long Break</Button>
+                </div>
 
-            <div className="timeDisplay">
-                <TimerCircle circumference={this.state.totalSeconds} initialSeconds={this.state.initialSeconds}/>
-                <div className="timerNumbers">{this.state.minDisplay} : {this.state.secDisplay}</div>
+                <div className="timeDisplay">
+                    <TimerCircle circumference={this.state.totalSeconds} initialSeconds={this.state.initialSeconds}/>
+                    <div className="timerNumbers">{this.state.minDisplay} : {this.state.secDisplay}</div>
+                </div>
+                
+                <div className="timerButtons">
+                    <Button onClick={this.startTimer}><i class="material-icons">play_arrow</i></Button>
+                    <Button onClick={this.stopTimer}><i class="material-icons">stop</i></Button>
+                    <Button onClick={this.resetTimer}><i class="material-icons">replay</i></Button>
+                </div>
             </div>
-              
-            <div className="timerButtons">
-                <Button onClick={this.startTimer}><i class="material-icons">play_arrow</i></Button>
-                <Button onClick={this.stopTimer}><i class="material-icons">stop</i></Button>
-                <Button onClick={this.resetTimer}><i class="material-icons">replay</i></Button>
-            </div>
-            
-            <div>
-                <CatDisplay picture = {this.state.picture}/>
-            </div>
-
-          </div>
+        </div>
         );
     }
 

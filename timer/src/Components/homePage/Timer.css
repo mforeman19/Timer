@@ -1,6 +1,13 @@
   .timer {
     flex-direction: column;
-    width: 40%;
+    /* width: 40%; */
+  }
+  .timerAndCat{
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
   }
   .taskLog {
     width: 30%;
@@ -12,6 +19,9 @@
     padding: 15px 15px;
     border: 2px #cccccc solid;
     box-shadow: 10px 10px#ffbcaf;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
   .taskList {
     width: 100%;
@@ -23,7 +33,7 @@
   .taskDelete {
     width: 20%;
   }
-  .emptyMainSection {
+  .catPic {
     width: 30%;
   }
   .timerTypes {
